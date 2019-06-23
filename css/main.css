@@ -1,0 +1,26 @@
+/* CSS Document */
+body{
+	background:#CCC;}
+.mr{
+	width:400px;
+	padding:10px;
+	margin:30px;
+	background:#0FF;
+	border:1px solid #CCC;
+	float:left;
+	}
+.mr-left{
+	transform:rotate(10deg);}
+.mr-right{
+	transform:rotate(-10deg);}.mr.mr-left p {
+	color: #FFFF80;
+}
+.mr.mr-right p {
+	color: #FFFF80;
+}
+.mr.mr-left p {
+	color: #000;
+}
+.mr.mr-right p {
+	color: #000;
+}
