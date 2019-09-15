@@ -1,0 +1,22 @@
+/* CSS Document */
+body{
+	width:100%;
+	background:#FFC;
+}
+
+.sec{
+	width:auto;
+	background:#CCC;
+	padding:50px 40px 10px;
+	margin-top:150px;
+	border-top:15px solid #0F3;/*头部填充大小和颜色*/
+	font-size:16px;
+}
+
+.sec img{
+	margin-top:-200px;
+	width:100px;
+	position:static;
+	border:10px solid #3F0;
+	border-bottom:10px solid #6FF;
+}

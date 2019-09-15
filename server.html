@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<!--STATUS OK--><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://cike7.club" />
+<title>Server</title> 
+<link href="css/server.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="main-menu"> 
+       <p align="right"><a href="" id="off">Menu</a></p>
+    </div>
+    
+    <div id="side_nav"> 
+      <a href="" id="close">Close</a>
+        <ul>
+            <li><a href="" id="affair">首页</a></li>
+            <li><a href="" id="affair">业务</a></li>
+            <li><a href="" id="affair">直营</a></li>
+            <li><a href="" id="affair">资讯</a></li>
+            <li><a href="" id="affair">关于</a></li>
+            <li><a href="" id="affair">合作</a></li>
+        </ul>
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="js/jQuery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() 
+	{
+	    $('#off,#close').click(function(e)
+		{
+			e.preventDefault();
+			$('#main-menu,#side_nav').toggleClass('off-display');
+		});
+	});
+</script>  
+</body>
+</html>
+

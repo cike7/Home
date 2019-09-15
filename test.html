@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+
+
+
+   <div id="music">
+   <section>
+   <article>
+     <div id="container">
+       <h3 id="musicName">爱你没差</h3>
+       <h4 id="currentTimeName">00:00</h4>
+       <h4 id="totalTimeName">00:00</h4>
+       <audio src="music/爱你没差.mp3" id="audio"></audio> 
+     </div>    
+   </article>
+   <article>
+     <div id="btn">
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+        <button id="catalogs">catalog</button>       
+       <div id="bon"></div>
+     </div>  
+    </article>
+    <article> 
+     <div id="catalog">           
+       <a href="" id="close">Close</a>
+        <ul>
+            <li class="songList"></li>
+            <li class="songList"></li>
+            <li class="songList"></li>
+            <li class="songList"></li>
+            <li class="songList"></li>
+            <li class="songList"></li>
+        </ul>
+     </div> 
+     </article>
+     </section>
+   </div><!--音乐播放器--> 
+   
+<style>
+section{
+	padding:100px;
+}
+article{
+	box-sizing:border-box;
+	text-align:center;
+	float:left;
+	padding-top:30px;
+	padding-left:20px;
+}
+</style>
+      
+  <script type="text/javascript">
+  var timer=0;
+  var player = document.getElementById("btn");
+  var barbg = document.getElementById("bon");
+  var songindex = document.getElementsByClassName("songList");
+  var songLists = new Array();
+   //添加音乐数组
+   var musics = new Array("爱你没差","模特","李白","喜欢你","信仰","东风破");//音乐数组
+   var index = 0;//音乐下标
+   var totalTime = 0;//计时器
+   
+   var minute = 0;//分
+   var seconds = 0;//秒
+   
+   var totals = 0;
+   
+   	setInterval(function(){
+		var cm = (audio.currentTime % 3600) / 60;
+		var cs = (audio.currentTime % 3600 % 60);	
+		currentTimeName.innerHTML  = parseInt(cm) +":"+ parseInt(cs);//当前时间	
+		
+		var tm = (totals % 3600) / 60;
+		var ts = (totals % 3600 % 60);	
+	
+		totalTimeName.innerHTML = parseInt(tm) +":"+ parseInt(ts);//总共时间
+			
+		if(totals <= 0)
+		{
+			totals = this.totals;
+		}
+		
+	},1000);
+   
+	// 播放
+	play.onclick = function(){
+		if(audio.paused){
+			totals = audio.duration;
+			//totalTime = audio.duration;
+			audio.play();
+		}
+	}
+	
+	// 暂停
+	pause.onclick = function(){
+		if(audio.played){
+			audio.pause();
+		}
+	}
+	
+	//目录显示
+	catalogs.onclick = function(){
+		for(index in musics)
+		{
+			songindex[index].innerHTML = musics[index];
+			var percent = audio.currentTime / audio.duration;
+		}
+	}
+	
+	// 上一首
+	prev.onclick = function(){
+		if(index > 0 && index < musics.length)
+		{
+			index--;
+		}
+		if(index == 0)
+		{
+			index = musics.length - 1;
+		}
+		var songName = musics[index];
+		audio.src = "music/" + songName +".mp3";
+		musicName.innerHTML = songName;
+		totals = audio.duration;
+		audio.play();
+
+	}
+	
+	// 下一首
+	next.onclick = function(){
+		if(index < musics.length-1)
+		{
+			index++;
+		}
+		else if(index = musics.length)
+		{
+			index=0;
+		}
+		var songName = musics[index];
+		audio.src = "music/" + songName +".mp3";
+		musicName.innerHTML = songName;
+		totals = audio.duration;
+		audio.play();
+	};
+
+  </script>
+</body>
+</html>

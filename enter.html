@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> 登入 </title>
+  <link href="css/enter.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div class="sec">
+    <section>
+      <img src="images/icon/11.jpg" alt="apple" >
+    </section>
+  <p>欢迎来到登入界面</p>
+  </div>
+  
+  <div>
+    <form method="post" action="index.html">
+    <p>账号：<input type="text" name="12" id="account" /></p>
+    <p>密码：<input type="text" name="45" id="password"/></p>
+    </form>
+    <p><button onclick="count()">提交表单</button></p>  
+
+  </div>
+    <script type="text/javascript">
+	  var ac = document.getElementById("account");
+	  var pa = document.getElementById("password");
+	  function count()
+	  {
+		  if(ac.value === "" && pa.value === ""){
+			  alert("账号或密码不能为空");
+		  }
+		  else{
+
+		}
+	}  
+	</script>
+<footer><!--页脚-->
+  <p> 版权所有，盗版必究 </p>
+</footer>
+</body>
+</html>
